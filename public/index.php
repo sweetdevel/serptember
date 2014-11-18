@@ -16,9 +16,16 @@ defined('SERP_ROOT') || define('SERP_ROOT', dirname(dirname(__FILE__)));
 $configuration = require SERP_ROOT . '/config/application.config.php';
 
 // Setup autoloading
-include SERP_ROOT . '/vendor/Zend/Loader/AutoloaderFactory.php';
-include SERP_ROOT . '/vendor/Zend/Loader/StandardAutoloader.php';
+require SERP_ROOT . '/vendor/Zend/Loader/AutoloaderFactory.php';
+require SERP_ROOT . '/vendor/Zend/Loader/ClassMapAutoloader.php';
 
+// Load ZF
+$autoLoader = new Zend\Loader\ClassMapAutoloader(array(
+    SERP_ROOT . '/vendor/Zend/autoload_classmap.php',
+));
+$autoLoader->register();
+
+// Load the rest
 Zend\Loader\AutoloaderFactory::factory(array(
     'Zend\Loader\StandardAutoloader' => $configuration['autoloader']
 ));
