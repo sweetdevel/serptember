@@ -1,9 +1,3 @@
-# Created by .gitignore support plugin (hsz.mobi)
-### ZendFramework template
-# Composer files
-composer.phar
-vendor/
-
 # Local configs
 config/autoload/*local.php
 
@@ -16,7 +10,3 @@ logs/
 cache/
 temp/
 tmp/
-
-# ZF1
-demos/
-extras/documentation
