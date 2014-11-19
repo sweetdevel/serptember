@@ -20,15 +20,19 @@ require SERP_ROOT . '/vendor/Zend/Loader/AutoloaderFactory.php';
 require SERP_ROOT . '/vendor/Zend/Loader/ClassMapAutoloader.php';
 
 // Load ZF
-$autoLoader = new Zend\Loader\ClassMapAutoloader(array(
-    SERP_ROOT . '/vendor/Zend/autoload_classmap.php',
-));
+$autoLoader = new Zend\Loader\ClassMapAutoloader(
+    array(
+        SERP_ROOT . '/vendor/Zend/autoload_classmap.php',
+    )
+);
 $autoLoader->register();
 
 // Load the rest
-Zend\Loader\AutoloaderFactory::factory(array(
-    'Zend\Loader\StandardAutoloader' => $configuration['autoloader']
-));
+Zend\Loader\AutoloaderFactory::factory(
+    array(
+        'Zend\Loader\StandardAutoloader' => $configuration['autoloader']
+    )
+);
 
 // Run the application!
 Zend\Mvc\Application::init($configuration)->run();
