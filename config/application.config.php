@@ -50,6 +50,7 @@ return array(
     'autoloader' => array(
         'namespaces' => array(
             'Serptember'  => __DIR__ . '/../vendor/Serptember',
+            'Requests'  => __DIR__ . '/../vendor/Requests',
         ),
         'autoregister_zf' => true,
     ),
